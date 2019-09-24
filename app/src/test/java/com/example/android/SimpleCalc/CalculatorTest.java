@@ -117,7 +117,6 @@ public class CalculatorTest {
     }
 
     @Test
-
     public void testSpyMethod(){
 
         List spyList = Mockito.spy(new ArrayList());
@@ -135,6 +134,7 @@ public class CalculatorTest {
         //Create a mock object of the class Calculator
         Calculator mockCalculator = Mockito.mock(Calculator.class);
 
+        //O valor retornado precisa ser double nessas funções!
         //Return the value of 30 when the add method is called with the arguments 10 and 20
         Mockito.when(mockCalculator.add(10, 20)).thenReturn(30d);
 
@@ -148,7 +148,7 @@ public class CalculatorTest {
         //Create a spy object of the class Calculator
         Calculator mockCalculator = Mockito.spy(new Calculator());
 
-        //O valor precisa ser double nessas funções!
+        //O valor retornado precisa ser double nessas funções!
         //Return the value of 30 when the add method is called on the spied object with the arguments 10 and 20
         Mockito.doReturn(30d).when(mockCalculator).add(10, 20);
 
